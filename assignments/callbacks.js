@@ -4,7 +4,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
 
-  // GIVEN THIS PROBLEM:
+ // GIVEN THIS PROBLEM:
 
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
@@ -39,23 +39,41 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
+const getLength= (arr, cb) => {
+  cb(arr.length);
+};
   // getLength passes the length of the array into the callback.
-}
 
-function last(arr, cb) {
+getLength(items, length => {console.log(`The length of array is ${length}`);});
+
+
+const last= (arr, cb) => {
+  cb(arr[3]);
   // last passes the last item of the array into the callback.
 }
+last(items, lastitem => {console.log (`The last item is ${lastitem}`);});
 
-function sumNums(x, y, cb) {
+
+const sumNums= (x, y, cb) => {
+  cb (x + y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+};
+sumNums( 1, 2, sum => {console.log(`the sum is ${sum}`)});
 
-function multiplyNums(x, y, cb) {
+const multiplyNums = (x, y, cb) => {
+  cb(x * y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+};
+multiplyNums(2, 3, mult => {console.log (`the product is ${mult}`)});
 
-function contains(item, list, cb) {
+
+const contains = (item, list, cb) => {
+  const isInArray = () => {
+    for (let i= 0; i < arr.length; i++) {
+      if (arr[i] === str){return true;}
+    } return false;
+  };
+  cb (isInArray());
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
